@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>כרטיסיות למידה - תל"ב חיל הים</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-dark: #0B1D3A;
+            --navy-blue: #1A365D;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --light-bg: #F7FAFC;
+            --text-gray: #4A5568;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--navy-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 5px solid var(--gold);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 35px;
+            right: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        .instructions {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+            font-size: 1.1rem;
+        }
+
+        /* גריד הכרטיסיות */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        /* אפקט ה-Flip בתלת-ממד */
+        .flashcard {
+            background-color: transparent;
+            height: 200px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+
+        .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+        }
+
+        /* המצב שבו הכרטיסייה הפוכה */
+        .flashcard.flipped .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* עיצוב צד קדמי (מושג) */
+        .card-front {
+            background-color: var(--white);
+            color: var(--navy-blue);
+            border: 2px solid #E2E8F0;
+        }
+
+        .card-front i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .card-front h3 {
+            font-size: 1.4rem;
+        }
+
+        /* עיצוב צד אחורי (הגדרה) */
+        .card-back {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            transform: rotateY(180deg);
+            border: 2px solid var(--gold);
+        }
+
+        .card-back p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+        }
+
+        footer {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--gold);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> חזרה</a>
+        <h1>כרטיסיות למידה - מושגי תל"ב</h1>
+    </header>
+
+    <div class="container">
+        <p class="instructions"><i class="fas fa-hand-pointer"></i> לחץ על כרטיסייה כדי לראות את ההסבר וההגדרה שלה</p>
+        
+        <div class="cards-grid">
+
+            <!-- כרטיסייה 1 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>מטרת על</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>השינוי ההתנהגותי, המקצועי או המחשבתי המצופה מהחניך כתוצאה מהשיעור או מהקורס כולו בטווח הארוך.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסייה 2 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-bolt"></i>
+                        <h3>גירוי ומניע (אינטרו)</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>פעולה בפתיחת השיעור שנועדה לעורר עניין, לחבר את החניכים לחשיבות הנושא ולגייס את המוטיבציה שלהם לקשב.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסייה 3 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-comments"></i>
+                        <h3>משוב מעצב</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>הערכה הניתנת לחניך תוך כדי תהליך הלמידה (ולא בסופו), במטרה לאתר פערים, לתקן טעויות ולשפר ביצועים בזמן אמת.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסייה 4 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-check-double"></i>
+                        <h3>מסיח איכותי</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>תשובה שגויה במבחן אמריקאי שנראית הגיונית וסבירה למי שלא למד, אך ברור שהיא שגויה למי שבאמת מכיר את החומר.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסייה 5 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-route"></i>
+                        <h3>מערך שיעור</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>מסמך המתווה את ארגון השיעור: מטרות, זמנים, שיטות הדרכה, עזרי לימוד ופירוט התוכן שלב אחר שלב.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כרטיסייה 6 -->
+            <div class="flashcard" onclick="toggleCard(this)">
+                <div class="card-inner">
+                    <div class="card-front">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>מטרת משנה</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>פירוט של אבני הדרך (הנושאים הספציפיים) שדרכן נגיע להשגת מטרת העל של השיעור.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 בה"ד חיל הים - מדור טיפוח הדרכה (תל"ב)</p>
+    </footer>
+
+    <!-- קוד ה-JavaScript שמסובב את הכרטיסייה -->
+    <script>
+        function toggleCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>

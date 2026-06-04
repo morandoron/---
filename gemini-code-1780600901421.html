@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הידעת? - בה"ד חיל הים</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --navy-dark: #0B1D3A;
+            --navy-blue: #1A365D;
+            --gold: #D4AF37;
+            --white: #FFFFFF;
+            --light-bg: #F7FAFC;
+            --text-gray: #4A5568;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--navy-dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-blue) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 5px solid var(--gold);
+            position: relative;
+        }
+
+        .back-btn {
+            position: absolute;
+            top: 35px;
+            right: 20px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 5px 12px;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--gold);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+
+        /* עיצוב כרטיסיות העובדות */
+        .fact-card {
+            background-color: var(--white);
+            border-right: 5px solid var(--navy-blue);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            transition: transform 0.2s;
+        }
+
+        .fact-card:hover {
+            transform: scale(1.02);
+            border-right-color: var(--gold);
+        }
+
+        .fact-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .fact-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--navy-blue);
+        }
+
+        .fact-content p {
+            color: var(--text-gray);
+            line-height: 1.6;
+            font-size: 1.05rem;
+        }
+
+        footer {
+            background-color: var(--navy-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9rem;
+            border-top: 3px solid var(--gold);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="back-btn"><i class="fas fa-arrow-right"></i> חזרה</a>
+        <h1>הידעת? - בה"ד חיל הים (600)</h1>
+    </header>
+
+    <div class="container">
+
+        <div class="fact-card">
+            <div class="fact-icon"><i class="fas fa-history"></i></div>
+            <div class="fact-content">
+                <h3>מאיפה הכל התחיל?</h3>
+                <p>בסיס ההדרכה של חיל הים לא תמיד ישב בחיפה. הוא הוקם לראשונה בשנת 1948 במחנה סידנא עלי שבהרצליה, ורק מאוחר יותר עבר למיקומו הנוכחי בחיפה כדי להיות צמוד לנמל ולכלי השיט המבצעיים.</p>
+            </div>
+        </div>
+
+        <div class="fact-card">
+            <div class="fact-icon"><i class="fas fa-ship"></i></div>
+            <div class="fact-content">
+                <h3>סימולטורים ברמה עולמית</h3>
+                <p>בה"ד חיל הים נחשב לאחד הבסיסים הטכנולוגיים והמתקדמים ביותר בצה"ל. הוא מחזיק במערך סימולטורים (מאמנים) מהמשוכללים בעולם, המדמים במדויק גשרים של ספינות טילים (סטי"לים) וצוללות, ומאפשרים אימון "על יבש" בתנאי ים סוערים ומצבי קיצון מבצעיים.</p>
+            </div>
+        </div>
+
+        <div class="fact-card">
+            <div class="fact-icon"><i class="fas fa-water"></i></div>
+            <div class="fact-content">
+                <h3>משמעות המספר 600</h3>
+                <p>המספר הרשמי של הבה"ד הוא בה"ד 600. בחיל הים קיימת מסורת ארוכת שנים לפיה מרבית יחידות החיל הגדולות והבסיסים נושאים מספרים עגולים או קידומות קבועות הקשורות למערך הימי.</p>
+            </div>
+        </div>
+
+        <div class="fact-card">
+            <div class="fact-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="fact-content">
+                <h3>בית הספר לחובלים וצוללנים</h3>
+                <p>הבה"ד הוא הבית הבלעדי שבו צומחת שדרת הפיקוד והלחימה של החיל. בו מתנהלים קורס החובלים היוקרתי וקורס צוללן, לצד מאות קורסי הסמכה טכנולוגיים, מקצועיים ופיקודיים לכלל דרגות החיל.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 בה"ד חיל הים - מדור טיפוח הדרכה (תל"ב)</p>
+    </footer>
+
+</body>
+</html>
